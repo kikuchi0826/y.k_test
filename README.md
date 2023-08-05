@@ -19,3 +19,11 @@
 ・一覧画面では、カレンダーに登録された作品を表示させ、リアクションできるようにする。
 
 登録→suggest、リアクション→reaction
+
+php artisan make:controller suggest&reactionController
+pamm suggest_reactionController
+
+php artisan make:migration create_suggest_reaction_table
+php artisan make:migration 
+php artisan make:model suggest_reaction
+ 

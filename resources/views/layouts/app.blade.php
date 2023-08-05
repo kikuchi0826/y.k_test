@@ -10,7 +10,7 @@
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-        <!-- Scripts --> @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
         <div id="app">
@@ -58,7 +58,7 @@
                         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div class="navbar-nav">
                                 <a class="nav-link" aria-current="page" href="{{ url('schedule/list') }}">上映スケジュール（実装予定）</a>
-                                <a class="nav-link" href="#">鑑賞提案＆リアクション</a>
+                                <a class="nav-link" href="{{ url('/suggest_reaction/list') }}">鑑賞提案＆リアクション</a>
                                 <a class="nav-link" href="#">○○管理</a>
                                 <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">○○管理</a>
                             </div>

@@ -7,3 +7,11 @@
 .select_day {
     margin-bottom: 20px;
 }
+
+/* 鑑賞提案とリアクション */
+
+.calendar {
+    max-width: 70%;
+    min-height: 400px;
+    margin: auto;
+}
