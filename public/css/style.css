@@ -4,7 +4,7 @@
 
 .wrapper {
     margin: auto;
-    max-width: 100%;
+    max-width: 88%;
 }
 
 /* 一覧画面 */
@@ -24,6 +24,10 @@ td.fc-sun {
 }
 
 .reaction_area {
-    margin-left: 250px;
+    margin-left: 150px;
     margin-bottom: 40px;
+}
+
+.reaction_list {
+    margin: 80px 30px;
 }

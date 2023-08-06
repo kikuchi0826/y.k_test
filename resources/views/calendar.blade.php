@@ -73,7 +73,7 @@
         </div>
         <div class="wrapper">
             <div class="reaction_area"><a href="{{ url('/suggest_reaction/list') }}">リアクションする</a></div>
-            <div id='calendar' style="max-width: 70%; margin: auto;"></div>
+            <div id='calendar' class="calendar"></div>
         </div>
     </body>
 </html>

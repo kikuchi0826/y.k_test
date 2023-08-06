@@ -35,6 +35,8 @@
 ・リアクションは中間テーブルにリアクションカラムを用意し、trueでリアクション済み、
   falsで、リアクション未を判別する。
 
+・中間テーブルには、ログイン時に自分のIDを保持、作品のIDで管理
+
 ・リアクションカラムがtrueのものが、3つ以上あれば、上映フラグをtrueにする
 
 項目
@@ -53,3 +55,5 @@
 
 pamc reactionScheduleController
 pamm reactionScheduleController
+
+RENAME TABLE reaction TO reactions
