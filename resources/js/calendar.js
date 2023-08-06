@@ -17,6 +17,8 @@ let calendar = new Calendar(calendarEl, {
     },
     locale: "ja",
 
+    
+
     // 日付をクリック、または範囲を選択したイベント
     selectable: true,
     select: function (info) {

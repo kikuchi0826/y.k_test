@@ -8,7 +8,7 @@ use App\Models\Schedule;
 class ScheduleController extends Controller
 {
 
-    /**
+        /**
      * イベントを登録
      *
      * @param  Request  $request
@@ -57,5 +57,11 @@ class ScheduleController extends Controller
             ->where('end_date', '>', $start_date)
             ->where('start_date', '<', $end_date)
             ->get();
+    }
+
+
+    public function list()
+    {
+        return view('Schedule.list');
     }
 }

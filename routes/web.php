@@ -27,13 +27,11 @@ Route::get('/schedule/list', [App\Http\Controllers\scheduleController::class, 'l
 
 // 鑑賞提案＆リアクション
 
-Route::get('/suggest_reaction/list', [App\Http\Controllers\suggest_reactionController::class, 'list']);
+Route::get('/suggest_reaction/calendar', [App\Http\Controllers\suggest_reactionController::class, 'calendar']);
 
-Route::post('/suggest_reaction/list', [App\Http\Controllers\suggest_reactionController::class, 'scheduleAdd'])->name('schedule-add');;
+Route::post('/suggest_reaction/calendar', [App\Http\Controllers\suggest_reactionController::class, 'scheduleAdd'])->name('schedule-add');;
 
-Route::get('/calendar', function () {
-    return view('calendar');
-});
+Route::get('/suggest_reaction/list', [App\Http\Controllers\suggest_reactionController::class, 'list'])->name('list');;
 
 Route::post('/schedule-add', [App\Http\Controllers\ScheduleController::class, 'scheduleAdd'])->name('schedule-add');
 

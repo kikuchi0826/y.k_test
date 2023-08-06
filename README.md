@@ -8,7 +8,17 @@
 ・映画の画像を引っ張ってきてレイアウトを考える
 
 
-鑑賞提案＆リアクション
+上映スケジュール
+
+・上映フラグをtrueにしたものだけを表示する。
+・一覧画面を用意して、
+    上映開始時間（日にちと時間）
+    作品名
+    URL
+を表示させる
+※日付ごとに表示できれば、なお、良し
+
+鑑賞提案
 
 機能
 
@@ -16,14 +26,30 @@
 
 ・登録画面では、見たい作品と、押下した日付を登録する。
 
-・一覧画面では、カレンダーに登録された作品を表示させ、リアクションできるようにする。
+※実装済み
 
-登録→suggest、リアクション→reaction
+リアクション機能
 
-php artisan make:controller suggest&reactionController
-pamm suggest_reactionController
+・ユーザーテーブルとスケジュールテーブルの中間テーブルを作ってリアクション機能を実装する
 
-php artisan make:migration create_suggest_reaction_table
-php artisan make:migration 
-php artisan make:model suggest_reaction
- 
+・リアクションは中間テーブルにリアクションカラムを用意し、trueでリアクション済み、
+  falsで、リアクション未を判別する。
+
+・リアクションカラムがtrueのものが、3つ以上あれば、上映フラグをtrueにする
+
+項目
+
+・作品名
+
+・現在の人数
+
+・作品内容（URLか内容）
+
+・備考
+
+・リアクションボタン
+
+・リアクション取り消しボタン
+
+pamc reactionScheduleController
+pamm reactionScheduleController

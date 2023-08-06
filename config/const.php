@@ -8,7 +8,7 @@ return [
         'update' => '編集',
     ],
 
-    'cssPath' => '/css/style.css',
+    'cssPath' => '/css/',
     'jsPath' => '/js/'
 
 ];

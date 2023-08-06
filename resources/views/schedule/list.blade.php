@@ -58,4 +58,3 @@
     </div>
 </div>
 @endsection
-<script src="{{config('const.jsPath')}}schedule.js"></script>

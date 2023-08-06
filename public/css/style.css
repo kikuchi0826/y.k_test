@@ -2,6 +2,11 @@
     上映スケジュール
 -------------------------*/
 
+.wrapper {
+    margin: auto;
+    max-width: 100%;
+}
+
 /* 一覧画面 */
 
 .select_day {
@@ -10,8 +15,15 @@
 
 /* 鑑賞提案とリアクション */
 
-.calendar {
-    max-width: 70%;
-    min-height: 400px;
-    margin: auto;
+
+td.fc-sat {
+    background-color: #eaf4ff;
+}
+td.fc-sun {
+    background-color: #ffeaea;
+}
+
+.reaction_area {
+    margin-left: 250px;
+    margin-bottom: 40px;
 }
