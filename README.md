@@ -53,7 +53,15 @@
 
 ・リアクション取り消しボタン
 
+スケジュールテーブルに提案者idのカラムを追加
+提案者の場合、リアクションボタンを非表示、提案を取り下げるボタンを表示
+それ以外はリアクションボタンを表示
+リアクションボタンは、リアクションフラグがtlueまたは、レコードがない場合、活性化、リアクションを取り下げるボタンは不活性化。
+リアクションボタンはカウント関数でリアクションフラグがtlerのものだけ、数えて表示するか、スケジュールカラムで、数字で管理。
+
 pamc reactionScheduleController
 pamm reactionScheduleController
 
 RENAME TABLE reaction TO reactions
+
+DELETE FROM reactions;

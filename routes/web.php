@@ -31,7 +31,9 @@ Route::get('/suggest_reaction/calendar', [App\Http\Controllers\suggest_reactionC
 
 Route::post('/suggest_reaction/calendar', [App\Http\Controllers\suggest_reactionController::class, 'scheduleAdd'])->name('schedule-add');;
 
-Route::get('/suggest_reaction/list', [App\Http\Controllers\suggest_reactionController::class, 'list'])->name('list');;
+Route::get('/suggest_reaction/list', [App\Http\Controllers\suggest_reactionController::class, 'list'])->name('list');
+
+Route::post('/suggest_reaction/result', [App\Http\Controllers\suggest_reactionController::class, 'result']);
 
 Route::post('/schedule-add', [App\Http\Controllers\ScheduleController::class, 'scheduleAdd'])->name('schedule-add');
 

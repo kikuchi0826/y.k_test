@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Models\Schedule;
 
@@ -15,6 +16,8 @@ class ScheduleController extends Controller
      */
     public function scheduleAdd(Request $request)
     {
+        $request->session()->start();
+        $id = Session::get('id');
         // バリデーション
         $request->validate([
             'start_date' => 'required|integer',
@@ -28,6 +31,7 @@ class ScheduleController extends Controller
         $schedule->start_date = date('Y-m-d', $request->input('start_date') / 1000);
         $schedule->end_date = date('Y-m-d', $request->input('end_date') / 1000);
         $schedule->event_name = $request->input('event_name');
+        $schedule->suggestion_users_id = $id;
         $schedule->save();
 
         return;

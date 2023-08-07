@@ -14,11 +14,15 @@
     @foreach ($schedules as $val)
         <div class="reaction_list" >
             <div>
-                <form action="">
+                <form action="{{ url('/suggest_reaction/result') }}" method="post">
+                    {{ csrf_field() }}
                     <input type="hidden"  name="schedule_id" value="{{ $val['id'] }}">
-                    <button name="reaction" value='true'>リアクションする</button>
-                    <button name="reaction" value='false' disabled>リアクションを取り消す</button>
-                    <button name="suggest_cancel" disabled>提案を取り消す</button>
+                    @if ($users_id != $val['suggestion_id'])
+                        <button name="reaction" value='true' <?=!empty($reactions['schedules_id']) && $val['id'] == $reactions['schedules_id'] ? 'disabled' : ''?>>リアクションする</button>
+                        <button name="reaction" value='false' disabled>リアクションを取り消す</button>
+                    @else
+                        <button name="suggest_cancel">提案を取り消す</button>
+                    @endif
                 </form>
             </div>
             <table class="table table-striped " border="1">
