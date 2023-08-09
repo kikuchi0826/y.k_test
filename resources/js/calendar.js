@@ -15,9 +15,8 @@ let calendar = new Calendar(calendarEl, {
         center: "title",
         right: "dayGridMonth,timeGridWeek,listWeek",
     },
-    locale: "ja",
 
-    
+    locale: "ja",
 
     // 日付をクリック、または範囲を選択したイベント
     selectable: true,
@@ -25,7 +24,7 @@ let calendar = new Calendar(calendarEl, {
         //alert("selected " + info.startStr + " to " + info.endStr);
 
         // 入力ダイアログ
-        const eventName = prompt("イベントを入力してください");
+        const eventName = prompt("作品名を入力してください");
 
         if (eventName) {
             // Laravelの登録処理の呼び出し

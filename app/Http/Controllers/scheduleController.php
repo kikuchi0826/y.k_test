@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Models\Schedule;
+use Illuminate\Support\Facades\DB;
 
 class ScheduleController extends Controller
 {
@@ -31,7 +32,7 @@ class ScheduleController extends Controller
         $schedule->start_date = date('Y-m-d', $request->input('start_date') / 1000);
         $schedule->end_date = date('Y-m-d', $request->input('end_date') / 1000);
         $schedule->event_name = $request->input('event_name');
-        $schedule->suggestion_users_id = $id;
+        $schedule->suggestion_id = $id;
         $schedule->save();
 
         return;
@@ -66,6 +67,10 @@ class ScheduleController extends Controller
 
     public function list()
     {
-        return view('Schedule.list');
+        $schedules = Schedule::where('hold_flg' , true)
+            ->orderBy('start_date', 'asc')
+            ->get()
+        ;
+        return view('Schedule.list',['schedules' => $schedules]);
     }
 }

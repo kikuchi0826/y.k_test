@@ -6,10 +6,9 @@
 <div style="max-width:80%; margin: auto">
     <div class="card form-group text-center mt-5 mb-5">
         {{ csrf_field() }}
-        <h2 class="mt-5 mb-5">リアクションを受け付けました。</h2>
+        <h2 class="mt-5 mb-5">{{config('const.' . $messege_title)}}</h2>
         <p class="mb-5">
-            リアクションありがとうございました！
-            みんなで鑑賞同好会を盛り上げていきましょう！
+            {{config('const.' . $messege)}}
         </p>
     </div>
     <div>

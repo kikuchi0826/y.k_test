@@ -13,18 +13,6 @@
     </div>
     @foreach ($schedules as $val)
         <div class="reaction_list" >
-            <div>
-                <form action="{{ url('/suggest_reaction/result') }}" method="post">
-                    {{ csrf_field() }}
-                    <input type="hidden"  name="schedule_id" value="{{ $val['id'] }}">
-                    @if ($users_id != $val['suggestion_id'])
-                        <button name="reaction" value='true' <?=!empty($reactions['schedules_id']) && $val['id'] == $reactions['schedules_id'] ? 'disabled' : ''?>>リアクションする</button>
-                        <button name="reaction" value='false' disabled>リアクションを取り消す</button>
-                    @else
-                        <button name="suggest_cancel">提案を取り消す</button>
-                    @endif
-                </form>
-            </div>
             <table class="table table-striped " border="1">
                 <thead class="thead-dark">
                     <tr>
@@ -48,11 +36,26 @@
                             リアクション数（提案者を含む）
                         </th>
                         <td>
-                            1人
+                            {{ $val['reaction_counter'] + 1}}人
                         </td>
                     </tr>
                 </thead>
             </table>
+            <div>
+                <form action="{{ url('/suggest_reaction/result') }}" method="post">
+                    {{ csrf_field() }}
+                    <input type="hidden"  name="schedule_id" value="{{ $val['id'] }}">
+                    @if ($users_id != $val['suggestion_id'])
+                        <button class="btn btn-outline-primary btn-sm" name="reaction" value='add_reaction' <?=$val['reaction_flg'] == true ? 'disabled' : ''?>>参加する</button>
+                        <button class="delete-action btn btn-outline-danger btn-sm" name="reaction" value='delete_reaction' onclick="return confirm('本当に参加を取り消しますか？')" <?=$val['reaction_flg'] != true ? 'disabled' : ''?>>参加を取り消す</button>
+                    @else
+                        @if ($val['reaction_counter'] >= 2)
+                            <button class="btn btn-outline-primary btn-sm" name="suggest" value='suggest_decision'>開催を確定させる</button>
+                        @endif
+                        <button class="delete-action btn btn-outline-danger btn-sm" name="suggest" value='suggest_delete' onclick="return confirm('本当に提案を取り消しますか？')">提案を取り消す</button>
+                    @endif
+                </form>
+            </div>
         </div>
     @endforeach
 </div>
