@@ -13,13 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // 上映スケジュール機能
 
@@ -38,3 +35,8 @@ Route::post('/suggest_reaction/result', [App\Http\Controllers\suggest_reactionCo
 Route::post('/schedule-add', [App\Http\Controllers\ScheduleController::class, 'scheduleAdd'])->name('schedule-add');
 
 Route::post('/schedule-get', [App\Http\Controllers\ScheduleController::class, 'scheduleGet'])->name('schedule-get');
+
+
+Route::get('/suggest_registration', [App\Http\Controllers\suggest_registrationController::class, 'list']);
+
+Route::get('/suggest_registration', [App\Http\Controllers\suggest_registrationController::class, 'list']);

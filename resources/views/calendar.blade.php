@@ -62,7 +62,7 @@
                             <div class="navbar-nav">
                                 <a class="nav-link" aria-current="page" href="{{ url('schedule/list') }}">上映スケジュール（実装予定）</a>
                                 <a class="nav-link" href="{{ url('/suggest_reaction/calendar') }}">鑑賞提案＆リアクション</a>
-                                <a class="nav-link" href="#">○○管理</a>
+                                <a class="nav-link" href="{{ url('/suggest_registration') }}">鑑賞提案登録</a>
                                 <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">○○管理</a>
                             </div>
                         </div>

@@ -23,7 +23,7 @@
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
-                    <a class="navbar-brand" href="{{ url('/home') }}">
+                    <a class="navbar-brand" href="{{ url('/') }}">
                     映画鑑賞同好会
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -66,7 +66,7 @@
                             <div class="navbar-nav">
                                 <a class="nav-link" aria-current="page" href="{{ url('schedule/list') }}">上映スケジュール（実装予定）</a>
                                 <a class="nav-link" href="{{ url('/suggest_reaction/calendar') }}">鑑賞提案＆リアクション</a>
-                                <a class="nav-link" href="#">○○管理</a>
+                                <a class="nav-link" href="{{ url('/suggest_registration') }}">鑑賞提案登録</a>
                                 <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">○○管理</a>
                             </div>
                         </div>
